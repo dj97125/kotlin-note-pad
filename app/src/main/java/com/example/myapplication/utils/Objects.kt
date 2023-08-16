@@ -1,4 +1,4 @@
-package com.example.myapplication.objects
+package com.example.myapplication.utils
 
 data class Response(
     val isOpen: Boolean,
