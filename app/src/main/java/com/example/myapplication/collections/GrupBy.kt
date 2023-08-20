@@ -37,7 +37,8 @@ class GrupBy {
             .mapNotNull { it.value.div(2)}.sum()
             .also { println("groupingBy eachCount $it") }
 
-        arrayOfTest.groupBy { Collections.frequency(arrayOfTest.toMutableList(), it) }
+        arrayOfTest.groupBy {
+            Collections.frequency(arrayOfTest.toMutableList(), it) }
             .map { it.key.coerceAtMost(3) }.also { println("groupingByTest $it") }
 
 

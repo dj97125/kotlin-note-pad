@@ -1,6 +1,6 @@
-package com.example.myapplication.data_structure
+package com.example.myapplication.data_structure.tree
 
-fun makeBeverageTree(): TreeNodeImpl<String>{
+fun makeBeverageTree(): TreeNodeImpl<String> {
     val tree = TreeNodeImpl("Beverages")
     val hot = TreeNodeImpl("hot")
     val cold = TreeNodeImpl("cold")
@@ -18,16 +18,41 @@ fun makeBeverageTree(): TreeNodeImpl<String>{
 
     tree.add(hot)
     tree.add(cold)
-    tree.add(tea)
-    tree.add(coffe)
-    tree.add(chocolate)
-    tree.add(blackTea)
-    tree.add(greenTea)
-    tree.add(chaiTea)
-    tree.add(soda)
-    tree.add(milk)
-    tree.add(gingerAle)
-    tree.add(bitterLemon)
+
+    hot.add(tea)
+    hot.add(coffe)
+    hot.add(chocolate)
+
+    cold.add(soda)
+    cold.add(milk)
+
+    tea.add(blackTea)
+    tea.add(greenTea)
+    tea.add(chaiTea)
+
+    soda.add(gingerAle)
+    soda.add(bitterLemon)
 
     return tree
+}
+
+fun main(){
+    val tree = makeBeverageTree()
+
+    println("--forEachDepthFirst--")
+    tree.forEachDepthFirst {
+
+        println(it.value)
+    }
+
+
+    tree.forEachLevelOrder {
+
+        println(it.value)
+    }
+
+
+    tree.search("coffe")
+
+    tree.printEachLevel()
 }

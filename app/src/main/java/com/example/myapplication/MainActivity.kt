@@ -2,15 +2,8 @@ package com.example.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.collections.CountingValleysHackerRank
-import com.example.myapplication.collections.DropTake
-import com.example.myapplication.collections.FoldReduce
-import com.example.myapplication.collections.GrupBy
-import com.example.myapplication.collections.PelotonoCodeChallenge
-import com.example.myapplication.collections.RetainRemove
-import com.example.myapplication.data_structure.LinkedList
-import com.example.myapplication.data_structure.makeBeverageTree
-import com.example.myapplication.data_structure.validParenthesis
+import com.example.myapplication.collections.Anagram
+import com.example.myapplication.data_structure.stack.validParenthesis
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,8 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        LinkedList<Int>().mainLinkedList()
-        "()()".validParenthesis().also { println("StackExample $it") }
+
 
         getConsecutiveNumbers(
             arrayOf(
@@ -32,9 +24,7 @@ class MainActivity : AppCompatActivity() {
             ).toMutableList()
         ).also { println("getConsecutive Numbers $it") }
 
-        makeBeverageTree().forEachDepthFirst {
-            println(it.value)
-        }
+
 
 //        FoldReduce().giveMeFold()
 //        DropTake().giveMeDropTake()
@@ -42,8 +32,9 @@ class MainActivity : AppCompatActivity() {
 //        CountingValleysHackerRank().giveMeValleys().also { println("CountingValleys $it") }
 //        PelotonoCodeChallenge().isMoneyEnough()
 //        FoldReduce().giveMeFold()
-        Lambdas().main()
+//        Lambdas().main()
 
+            Anagram().main(arrayOf("ate","eat","tae","bind","bound","bndou"))
 
 
 

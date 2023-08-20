@@ -9,7 +9,8 @@ class Lambdas {
         return builder
     }
     fun main(){
-        val greeting:() -> Unit = { println("Lambda")}
+        val greeting:() -> Unit = {
+            println("Lambda")}
         val sum = {a:Int,b:Int -> a + b}
         val square : (Int) -> Int = {x -> x.times(x)}
         val sayHiExplicit:() -> Unit = { println("Hi")}

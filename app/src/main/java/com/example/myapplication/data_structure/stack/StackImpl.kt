@@ -1,4 +1,4 @@
-package com.example.myapplication.data_structure
+package com.example.myapplication.data_structure.stack
 
 interface Stack<T : Any> {
     fun pop(): T?
@@ -24,6 +24,7 @@ class StackImpl<T : Any> : Stack<T> {
         storage.add(element)
     }
 
+
 }
 
 fun String.validParenthesis(): Boolean {
@@ -38,5 +39,3 @@ fun String.validParenthesis(): Boolean {
     return stack.isEmpty
 }
 
-
-data class Person(val isOpen: Boolean, val isChange: Boolean, val change: Int)
