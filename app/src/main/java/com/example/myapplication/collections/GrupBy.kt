@@ -7,20 +7,19 @@ import java.util.Collections
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTimedValue
 
-class GrupBy {
-    @OptIn(ExperimentalTime::class)
 
-    fun giveMeGrroupBy() {
-        fruitsList.groupBy { it.isGreen }
-            .forEach { println("groupBy Example ${it.key} -> ${it.value}") }
+@OptIn(ExperimentalTime::class)
+fun main() {
+    fruitsList.groupBy { it.isGreen }
+        .forEach { println("groupBy Example ${it.key} -> ${it.value}") }
 
-        val fruitListNoPng = fruitsList.map {
-            Fruits(it.type.removeSuffix(".png"), it.isGreen)
-        }
-
+    val fruitListNoPng = fruitsList.map {
+        Fruits(it.type.removeSuffix(".png"), it.isGreen)
+    }
 
 
-        fruitListNoPng.groupBy { it.type.toInt() > 2 }
+
+    fruitListNoPng.groupBy { it.type.toInt() > 2 }
             .forEach { println("groupBy Example type ${it.key} -> ${it.value}") }
 
         fruitListNoPng.groupBy(
@@ -52,4 +51,3 @@ class GrupBy {
         println("it took $timePerformance")
 
     }
-}

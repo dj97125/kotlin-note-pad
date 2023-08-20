@@ -5,18 +5,18 @@ import com.example.myapplication.utils.elemets2
 import com.example.myapplication.utils.isEven2
 import com.example.myapplication.utils.numbers
 
-class MapFlatMapZip {
 
 
 
-    fun givemeMap() {
+    fun main() {
 
         elemets2.map { it.change.isEven2() }.also { list ->
             list.forEach {
                 println("isEven? = $it")
             }
         }
-        listOf(elemets, elemets2).flatten().filter { it.change == 35 }.map { it.isOpen }.also { println("Map1 = $it") }
+        listOf(elemets, elemets2).flatten().filter { it.change == 35 }.map { it.isOpen }
+            .also { println("Map1 = $it") }
         numbers.filter { it.isEven2() }.map { it.times(4) }.also { println("Map2 = $it") }
         elemets.filter { it.isOpen }.map { it.change }.also { println("Map3 = $it") }
 
@@ -32,4 +32,3 @@ class MapFlatMapZip {
         }.also { println("toIntOrNull $it") }
 
     }
-}

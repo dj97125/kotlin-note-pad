@@ -1,21 +1,20 @@
 package com.example.myapplication.collections
 
 import com.example.myapplication.utils.fruitsList
-import com.example.myapplication.utils.isEven2
-
-class RetainRemove {
-
-    fun giveMeRetainRemove() {
 
 
-        fruitsList.chunked(3).forEach { parentOrder ->
-            parentOrder.map { childOrder ->
-                childOrder.type.removeSuffix(".png").toInt().times(3)
-            }.also { println("removeExample6 $it") }
-        }
-        mutableListOf(
-            'a', 'b', '0', '2'
-        ).apply { retainAll { it.isLetter() } }.also { println("removeExample1 $it") }/// retain the elements that is a letter
+fun main() {
+
+
+    fruitsList.chunked(3).forEach { parentOrder ->
+        parentOrder.map { childOrder ->
+            childOrder.type.removeSuffix(".png").toInt().times(3)
+        }.also { println("removeExample6 $it") }
+    }
+    mutableListOf(
+        'a', 'b', '0', '2'
+    ).apply { retainAll { it.isLetter() } }
+        .also { println("removeExample1 $it") }/// retain the elements that is a letter
 
         val numbers1 = (0 until 20).toMutableList()
         numbers1.apply { removeAll { it > 10 } }.also { println("removeExample2 $it") }
@@ -44,4 +43,3 @@ class RetainRemove {
 
 
     }
-}

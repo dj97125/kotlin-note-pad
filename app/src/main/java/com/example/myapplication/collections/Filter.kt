@@ -7,10 +7,9 @@ import com.example.myapplication.utils.fruitsList
 import com.example.myapplication.utils.mix
 import java.util.Collections
 
-class Filter {
-
-    fun giveMeFilter(){
-        fruitsList.filter { it.isGreen }.map { it.type }.also { println("filter map Example 1 $it") }
+    fun main() {
+        fruitsList.filter { it.isGreen }.map { it.type }
+            .also { println("filter map Example 1 $it") }
 
         mix.filterIsInstance<Response>().filter { it.isOpen }
             .also { println("filterInstanceFilter $it") }
@@ -34,4 +33,3 @@ class Filter {
         newArray.forEach { println("Solo element $it") }
 
     }
-}

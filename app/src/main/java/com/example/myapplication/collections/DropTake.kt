@@ -4,9 +4,8 @@ import com.example.myapplication.utils.Fruits
 import com.example.myapplication.utils.fruitsList
 import kotlin.random.Random
 
-class DropTake {
 
-    fun giveMeDropTake() {
+    fun main() {
         fruitsList.take(2)
             .also { println("take = $it") }// take the first 2 elements in the list
         fruitsList.takeLast(3)
@@ -43,4 +42,3 @@ class DropTake {
             println("thereIsNotIndex in getOrElse")
         }.also { println("getOrElse $it") }
     }
-}

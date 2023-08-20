@@ -1,9 +1,8 @@
 package com.example.myapplication.collections
 
 
-class CountingValleysHackerRank {
 
-    fun giveMeValleys():Int {
+    fun main() {
         val record = "udDDuDUU"
         var valleyCounter = 0
         var altitude = 0
@@ -18,6 +17,4 @@ class CountingValleysHackerRank {
             }
         }
 
-        return valleyCounter
     }
-}

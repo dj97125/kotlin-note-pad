@@ -6,8 +6,7 @@ data class AnagramObject(
     var isAnagram: Boolean
 )
 
-class Anagram {
-    fun main(args: Array<String>) {
+    fun main(args: Array<String> = arrayOf("ate","eat","tae","bind","bound","bndou")) {
         val mutableList = mutableListOf<AnagramObject>()
         args.groupBy { it.length }.map {
             it.toPair()
@@ -40,5 +39,3 @@ class Anagram {
 
     }
 
-
-}

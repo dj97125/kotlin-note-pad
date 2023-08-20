@@ -1,25 +1,23 @@
 package com.example.myapplication.collections
-import com.example.myapplication.utils.listNumbers
-import com.example.myapplication.utils.elemets
 import com.example.myapplication.utils.bananasList
+import com.example.myapplication.utils.elemets
 import com.example.myapplication.utils.fruitsList
+import com.example.myapplication.utils.listNumbers
 
 
 /// Distinct remove repetitive elements, just keep one with the change
 
-class DistinctPartition {
 
+fun main() {
+    val newList = mutableListOf<List<List<Int>>>()
+    repeat(listNumbers.size) {
+        listNumbers.toMutableList().chunked(4) { it.shuffled() }.also { newList.add(it) }
+    }
+    val newNewList = newList.flatMap { it.distinct() }
 
-    fun distinctElements() {
-        val newList = mutableListOf<List<List<Int>>>()
-        repeat(listNumbers.size) {
-            listNumbers.toMutableList().chunked(4) { it.shuffled() }.also { newList.add(it) }
-        }
-        val newNewList = newList.flatMap { it.distinct() }
+    println("flattenList $newNewList")
 
-        println("flattenList $newNewList")
-
-        elemets.distinct().also { println("distinctObjects = $it") }
+    elemets.distinct().also { println("distinctObjects = $it") }
 
         listNumbers.distinct().also { println("distinctNumbers = $it") }
 
@@ -45,4 +43,3 @@ class DistinctPartition {
     }
 
 
-}

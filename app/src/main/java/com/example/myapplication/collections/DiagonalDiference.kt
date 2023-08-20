@@ -2,9 +2,8 @@ package com.example.myapplication.collections
 
 import com.example.myapplication.utils.arrayDiagonalDiference
 
-class DiagonalDiference {
 
-    fun giveMeDiagonalDiference(){
+    fun main(){
 
         val firstDiagonal = mutableListOf<Int>()
         val secondDiagonal = mutableListOf<Int>()
@@ -21,4 +20,3 @@ class DiagonalDiference {
         println(kotlin.math.abs(firstSum.minus(secondSum)))
 
     }
-}

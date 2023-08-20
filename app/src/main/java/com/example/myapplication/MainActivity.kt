@@ -2,8 +2,6 @@ package com.example.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.collections.Anagram
-import com.example.myapplication.data_structure.stack.validParenthesis
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,9 +31,6 @@ class MainActivity : AppCompatActivity() {
 //        PelotonoCodeChallenge().isMoneyEnough()
 //        FoldReduce().giveMeFold()
 //        Lambdas().main()
-
-            Anagram().main(arrayOf("ate","eat","tae","bind","bound","bndou"))
-
 
 
     }
