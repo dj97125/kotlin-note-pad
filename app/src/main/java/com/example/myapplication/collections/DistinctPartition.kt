@@ -32,14 +32,16 @@ fun main() {
 
         println("Green = $isGreen, isNotGreen = $isNotGreen")
 
-        val (isMore, isNot) = fruitsList.partition {
-            it.type.toInt() > 1
+        val (isMore, isNot) = fruitsList.map { it.type.removeSuffix(".png") }.partition {
+            it.toInt() > 1
         }
 
         println("isMore = $isMore, isNot = $isNot")
 
         mutableListOf("BANANA", "banana", "ZANAhoria", "zanahoria").distinctBy { it.lowercase() }
             .also { println("distinctBy Example $it") }/// set no work for strings, we need to use distinct by
+
+        "Hello World everybody body".split(" ").also { println("Words Numbers ${it.size}") }
     }
 
 

@@ -3,13 +3,19 @@ package com.example.myapplication.collections
 import com.example.myapplication.utils.fruitsList
 import com.example.myapplication.utils.isEven2
 
-    fun main() {
+fun main() {
 
-        fruitsList.associateBy { it.type }.also { println("asociate by $it") }
+    fruitsList.associateBy { it.type }.also { println("asociate by $it") }
+    fruitsList.map { it.type.removeSuffix(".png") }.any { it.toInt().isEven2() }
+        .also { println("is there any even = $it") }
+    fruitsList.map { it.type.removeSuffix(".png") }.none { it.toInt().isEven2() }
+        .also { println("is there any even = $it") }
+    fruitsList.map { it.type.removeSuffix(".png") }.all { it.toInt().isEven2() }
+        .also { println("is there any even = $it") }
 
 
-        fruitsList.any { it.type.toInt().isEven2() }.also { println("is there any even = $it") }
-        fruitsList.none { it.type.toInt().isEven2() }.also { println("is there not even? = $it") }
-        fruitsList.all { it.type.toInt().isEven2() }
-            .also { println("is there all even = $it") }/// gives an true just if all the elements are even
+    "aaaabbbccdabxx".toMutableList().chunked(4).groupingBy { it }.eachCount().forEach { counting ->
+        println(counting)
     }
+
+}

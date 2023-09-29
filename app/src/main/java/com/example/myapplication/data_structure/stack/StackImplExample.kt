@@ -1,6 +1,6 @@
 package com.example.myapplication.data_structure.stack
 
-interface Stack<T : Any> {
+interface StackExample<T : Any> {
     fun pop(): T?
     fun push(element: T)
     fun peek(): T?
@@ -11,7 +11,7 @@ interface Stack<T : Any> {
 
 }
 
-class StackImpl<T : Any> : Stack<T> {
+class StackImplExample<T : Any> : Stack<T> {
     private var storage = arrayListOf<T>()
     override val count: Int
         get() = storage.size
@@ -27,7 +27,7 @@ class StackImpl<T : Any> : Stack<T> {
 
 }
 
-fun String.validParenthesis(): Boolean {
+fun String.sequence(): Boolean {
     val stack = StackImpl<Char>()
 
     this.forEach {
@@ -38,6 +38,4 @@ fun String.validParenthesis(): Boolean {
     }
     return stack.isEmpty
 }
-
-
 

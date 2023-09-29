@@ -14,14 +14,12 @@ import java.util.Collections
         mix.filterIsInstance<Response>().filter { it.isOpen }
             .also { println("filterInstanceFilter $it") }
 
-        val mutableSomething = mutableListOf<Fruits>()
 
-        fruitsList.filter { it.isGreen }.forEach {
-            val copy = it.copy(isGreen = false)
-            mutableSomething.add(copy)
+        val mutableSomething = fruitsList.filter { it.isGreen }.map {
+            it.copy(isGreen = false)
         }
 
-        println("filterInstanceFilter $mutableSomething")
+        println("filterInstanceFilterMutableList $mutableSomething")
 
 
         (0..30).toList().filter2 { it % 2 == 0 }.also { println("my first lambda $it") }

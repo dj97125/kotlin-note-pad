@@ -31,6 +31,7 @@ import kotlin.random.Random
         generateSequence { Random.nextInt(100).takeIf { it > 30 } }.toList()
             .also { println("takeIf1 = $it") }
 
+
         (0 until 1000).toMutableList().mapNotNull { parent ->
             parent.takeIf {
                 it > 20
@@ -41,4 +42,6 @@ import kotlin.random.Random
         (0 until 3).toMutableList().getOrElse(5) {
             println("thereIsNotIndex in getOrElse")
         }.also { println("getOrElse $it") }
+
+
     }

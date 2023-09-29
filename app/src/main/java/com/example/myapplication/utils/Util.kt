@@ -156,4 +156,4 @@ val flipingTheMatrixArray = arrayOf(
     arrayOf(62, 98, 114, 108)
 )
 
-val arrayDiagonalDiference = arrayOf(arrayOf(11, 2, 4), arrayOf(4, 5, 6), arrayOf(10, 8, -12))
+val arrayDiagonalDiference = arrayOf(arrayOf(11, 2, 4) , arrayOf(4, 5, 6) , arrayOf(10, 8, -12))
