@@ -1,4 +1,4 @@
-package com.example.myapplication.collections
+package com.example.myapplication.hackerrank
 
 import com.example.myapplication.utils.arrayDiagonalDiference
 
@@ -8,6 +8,7 @@ import com.example.myapplication.utils.arrayDiagonalDiference
         val firstDiagonal = mutableListOf<Int>()
         val secondDiagonal = mutableListOf<Int>()
         var incremental = 0
+
         (arrayDiagonalDiference.indices).forEach {
             firstDiagonal.add(arrayDiagonalDiference[incremental][incremental])
             secondDiagonal.add(arrayDiagonalDiference.reversed()[incremental][incremental])

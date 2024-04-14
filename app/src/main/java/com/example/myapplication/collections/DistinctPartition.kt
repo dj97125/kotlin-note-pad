@@ -41,7 +41,7 @@ fun main() {
         mutableListOf("BANANA", "banana", "ZANAhoria", "zanahoria").distinctBy { it.lowercase() }
             .also { println("distinctBy Example $it") }/// set no work for strings, we need to use distinct by
 
-        "Hello World everybody body".split(" ").also { println("Words Numbers ${it.size}") }
+
     }
 
 

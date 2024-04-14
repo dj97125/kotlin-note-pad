@@ -1,4 +1,4 @@
-package com.example.myapplication.collections
+package com.example.myapplication.hackerrank
 
 
 

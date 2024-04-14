@@ -30,14 +30,24 @@ class StackImpl<T : Any> : Stack<T> {
 fun String.validParenthesis(): Boolean {
     val stack = StackImpl<Char>()
 
-    this.forEach {
-        when (it) {
-            '(' -> stack.push(it)
-            ')' -> if (stack.isEmpty) return false else stack.pop()
+
+    this.forEach { ch ->
+        when (ch) {
+            '(' -> stack.push(ch)
+            ')' -> {
+                if (stack.isEmpty) {
+                    return false
+                } else stack.pop()
+
+
+            }
+
         }
     }
     return stack.isEmpty
 }
+
+
 
 
 

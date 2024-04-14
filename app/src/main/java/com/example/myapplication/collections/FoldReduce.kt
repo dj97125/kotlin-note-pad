@@ -17,51 +17,21 @@ fun main() {
     arr124.fold(0) { acumulator, item ->
         acumulator.plus(item)
     }
-    val array = mutableListOf<Int>()
-    twoSum(arr124, 6)
-    arr124.runningFold(0) { acumulator, item ->
-        acumulator.plus(item)
-    }
-
-    mutableListOf(1, 2, 3, 4, 5).runningFold(1) { acc, value ->
-        acc.times(value)
-    }.also { println("runningFold = $it") }
-
-    val sumList = mutableListOf(1, 2, 3, 4, 5, 6, 7).reduce { acumulator, next ->
-        acumulator.plus(next)
-    }
-
-
-    println("reduce sumList $sumList")
-
-    val sumList4 = mutableListOf(1, 2, 3, 4, 5, 6, 7).runningReduce { acumulator, next ->
-        acumulator.plus(next)
-    }
-    println("reduce runningReduceSumList $sumList4")
 
     val numbers12 = listOf(1, 2, 3, 4, 5)
     val filteredList = numbers12.fold(mutableListOf<Int>()) { accumulator, element ->
         if (element % 2 == 0) accumulator else accumulator.apply { add(element) }
     }
 
-    val subList = mutableListOf<Char>()
-    val mainList = mutableListOf<List<Char>>()
-    "aaaabbbccdabxx".forEach { char ->
-        when {
-            char == subList.firstOrNull() || subList.isEmpty() -> subList.add(char)
-            char != subList.last() -> {
-                mainList.add(subList.toList())
-                subList.clear()
-                subList.add(char)
-            }
-            else -> {
-                subList.add(char)
-            }
-        }
-
+    twoSum(arr124, 6)
+    arr124.runningFold(0) { acumulator, item ->
+        acumulator.plus(item)
     }
-    println(filteredList)
-    println("repitable letters $mainList")
+    //122,123,125,126,127,128
+
+    mutableListOf(1, 2, 3, 4, 5).runningFold(1) { acc, value ->
+        acc.times(value)
+    }.also { println("runningFold = $it") }
 
     val sumList5 =
         mutableListOf(
@@ -85,6 +55,48 @@ fun main() {
     }
     println("reduce foldSumList $sumList2")
 
+    val sumList3 = mutableListOf(1, 2, 3, 4, 5, 6, 7).runningFold(2) { acumulator, next ->
+        acumulator.plus(next)
+    }
+    println("reduce runningFoldSumList $sumList3")
+
+
+
+    val sumList = mutableListOf(1, 2, 3, 4, 5, 6, 7).reduce { acumulator, next ->
+        acumulator.plus(next)
+    }
+
+
+    println("reduce sumList $sumList")
+
+    val sumList4 = mutableListOf(1, 2, 3, 4, 5, 6, 7).runningReduce { acumulator, next ->
+        acumulator.plus(next)
+    }
+    println("reduce runningReduceSumList $sumList4")
+
+
+
+    val subList = mutableListOf<Char>()
+    val mainList = mutableListOf<List<Char>>()
+    "aaaabbbccdabxx".forEach { char ->
+        when {
+            char == subList.firstOrNull() || subList.isEmpty() -> subList.add(char)
+            char != subList.last() -> {
+                mainList.add(subList.toList())
+                subList.clear()
+                subList.add(char)
+            }
+            else -> {
+                subList.add(char)
+            }
+        }
+
+    }
+    println(filteredList)
+    println("repitable letters $mainList")
+
+
+
     val numbers = listOf(10, 5, 8, 30, 12)
     val maxNumber = numbers.reduce { accumulator, element ->
         if (element > accumulator) element else accumulator
@@ -92,10 +104,7 @@ fun main() {
     println("reduceMaxNunber $maxNumber")
 
 
-    val sumList3 = mutableListOf(1, 2, 3, 4, 5, 6, 7).runningFold(2) { acumulator, next ->
-        acumulator.plus(next)
-    }
-    println("reduce runningFoldSumList $sumList3")
+
 
     val words = listOf("Hello", "World", "Kotlin", "Fold")
     val concatenatedString = words.reduce { accumulator, element ->
@@ -147,6 +156,13 @@ private fun twoSum(nums: IntArray, target: Int) {
 
     }
     println("twoSum $mutable")
+
+//    fun IntArray.twoSum(target: Int): IntArray {
+//        return this.sorted()
+//            .foldIndexed(mutableListOf<Int>()) { index: Int, acc: MutableList<Int>, i: Int ->
+//                if (acc.sum() == target) return else acc.apply { add(i) }
+//            }.map { it.to }
+//    }
 
 }
 

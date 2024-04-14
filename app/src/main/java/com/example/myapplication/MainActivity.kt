@@ -2,6 +2,11 @@ package com.example.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.collections.SyncronizedEx
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,26 +16,32 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        getConsecutiveNumbers(
-            arrayOf(
-                1,
-                2,
-                2,
-                2,
-                3,
-                4
-            ).toMutableList()
-        ).also { println("getConsecutive Numbers $it") }
+//        getConsecutiveNumbers(
+//            arrayOf(
+//                1,
+//                2,
+//                2,
+//                2,
+//                3,
+//                4
+//            ).toMutableList()
+//        ).also { println("getConsecutive Numbers $it") }
+        GlobalScope.launch {
+            withContext(Dispatchers.Default){
+                SyncronizedEx().increment()
+            }
+        }
+        GlobalScope.launch {
+            withContext(Dispatchers.IO){
+                SyncronizedEx().increment()
+            }
+        }
+        GlobalScope.launch {
+            withContext(Dispatchers.Default){
+                SyncronizedEx().increment()
+            }
+        }
 
-
-
-//        FoldReduce().giveMeFold()
-//        DropTake().giveMeDropTake()
-//        RetainRemove().giveMeRetainRemove()
-//        CountingValleysHackerRank().giveMeValleys().also { println("CountingValleys $it") }
-//        PelotonoCodeChallenge().isMoneyEnough()
-//        FoldReduce().giveMeFold()
-//        Lambdas().main()
 
 
     }
