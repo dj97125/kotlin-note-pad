@@ -67,6 +67,12 @@ fun main() {
 //    println(TwoSum.twoSum(intArrayOf(2,2,3), 4))
 //    println(FixStringCase.solve("CODe"))
 
+    val newList = listOf<Int>(1,2,3,5,6,7,89,90,9).chunked(2).map { it.toList() }
+    newList[1].forEach {
+        println(it)
+    }
+    println("newListZanjero_$newList")
+
 
     "        Hola    PM".trim().also { println(it) }
     " H o l a".also { println(it) }

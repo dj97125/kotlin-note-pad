@@ -71,6 +71,16 @@
 //        merge(flow1,flow2, flow3).onEach {
 //            numberString += "$it\n"
 //        }.launchIn(viewmodelScope)
+//
+//        val deferredResults = listOf(
+//            async { fetchAsyncData("Server A") },
+//            async { fetchAsyncData("Server B") },
+//            async { fetchAsyncData("Server C") }
+//        )
+//        deferredResults.awaitAll()
+//
+//
+//
 //    }
 //
 //
